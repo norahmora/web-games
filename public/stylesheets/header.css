@@ -1,0 +1,128 @@
+/* ==========================================================
+   header.css — cabecera con logo y menú (partials/header.ejs)
+   ========================================================== */
+
+.cabecera {
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 32px 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cabecera__marca {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.logo__icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(var(--azul-claro), var(--azul) 60%, var(--azul-medio));
+  border: 3px solid var(--azul-oscuro);
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.6), 0 4px 0 var(--azul-oscuro);
+}
+
+.logo__texto {
+  padding: 6px 28px 10px;
+  border-radius: 16px;
+  background: var(--brillo-placa);
+  border: 3px solid var(--azul-borde);
+  box-shadow: inset 0 3px 0 #ffffff, 0 6px 18px rgba(13, 58, 140, 0.25);
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  font-size: 56px;
+  letter-spacing: 2px;
+  color: var(--azul);
+  text-shadow: 3px 3px 0 #ffffff, 5px 5px 0 var(--azul-borde);
+}
+
+.cabecera__smiley {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #9fd0ff, #1f6fe0 55%, var(--azul-oscuro));
+  border: 3px solid var(--blanco);
+  box-shadow: 0 4px 10px rgba(13, 58, 140, 0.4);
+}
+
+/* ---------- Menú ---------- */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 12px;
+  background: var(--brillo-plata);
+  border: 2px solid var(--gris-borde);
+  box-shadow: inset 0 2px 0 #ffffff, 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav__enlace {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 26px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  font-family: var(--fuente-sistema);
+  font-size: 26px;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.nav__enlace:hover {
+  color: var(--azul-oscuro);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Página actual: se marca con aria-current, que además lo anuncia
+   a los lectores de pantalla */
+.nav__enlace[aria-current="page"] {
+  background: linear-gradient(#ffffff, #cfe3ff);
+  border-color: var(--azul);
+  color: var(--azul-oscuro);
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .logo__texto {
+    font-size: 36px;
+    padding: 4px 16px 8px;
+  }
+
+  .logo__icono {
+    width: 48px;
+    height: 48px;
+  }
+
+  .cabecera__smiley {
+    display: none;
+  }
+
+  .nav__enlace {
+    padding: 0 14px;
+    font-size: 22px;
+  }
+}

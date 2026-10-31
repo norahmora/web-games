@@ -1,0 +1,55 @@
+/* ==========================================================
+   var.css — variables de diseño.
+   Si cambias un color aquí, cambia en toda la web.
+   ========================================================== */
+
+:root {
+  /* Azules */
+  --azul-oscuro: #0d3a8c;
+  --azul: #1f5fd1;
+  --azul-medio: #1a4fb3;
+  --azul-claro: #6fb3ff;
+  --azul-palido: #b8d4ff;
+  --azul-borde: #8fb6ee;
+
+  /* Texto */
+  --texto: #14213d;
+  --texto-suave: #3d4b66;
+
+  /* Acentos */
+  --verde: #3cb043;
+  --amarillo: #ffe14d;
+  --amarillo-texto: #4a3500;
+  --rosa: #ff8cc6;
+  --rosa-oscuro: #b0307a;
+  --rosa-claro: #ffd6ec;
+  --rojo-cerrar: #d23a24;
+
+  /* Neutros */
+  --blanco: #ffffff;
+  --gris-borde: #8a8a8a;
+  --gris-campo: #6f84a8;
+  --foco: #ffd400;
+
+  /* Fuentes */
+  --fuente-titulo: 'Cloudy', 'Pixelify Sans', monospace;
+  --fuente-pixel: 'Pixelify Sans', monospace;
+  --fuente-sistema: 'VT323', monospace;
+  --fuente-texto: Verdana, Tahoma, sans-serif;
+  --fuente-nota: 'Rufenthall', cursive;
+
+  /* Brillos (degradados de los botones y barras) */
+  --brillo-azul: linear-gradient(var(--azul-claro), var(--azul) 55%, var(--azul-medio));
+  --brillo-barra: linear-gradient(#5fa8ff, var(--azul) 60%, var(--azul-medio));
+  --brillo-gris: linear-gradient(#ffffff, #dcdcdc);
+  --brillo-plata: linear-gradient(#fafafa, #d6d6d6 60%, #bdbdbd);
+  --brillo-placa: linear-gradient(#ffffff, #dbeaff 55%, var(--azul-palido));
+
+  /* Sombras */
+  --sombra-ventana: 6px 6px 0 rgba(13, 58, 140, 0.35);
+  --sombra-ventana-grande: 8px 8px 0 rgba(13, 58, 140, 0.35);
+
+  /* Medidas */
+  --ancho-max: 1180px;
+  --radio: 10px;
+}

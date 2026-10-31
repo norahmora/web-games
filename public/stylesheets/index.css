@@ -1,0 +1,471 @@
+/* ==========================================================
+   index.css — página de inicio (views/index.ejs)
+   ========================================================== */
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-top: 48px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 36px;
+}
+
+/* ---------- Monitor ---------- */
+.monitor {
+  flex: 1 1 540px;
+  min-width: 0;
+  position: relative;
+  padding: 26px 26px 18px;
+  border-radius: 28px;
+  background: linear-gradient(#f6f3ec, #dcd7cc);
+  border: 2px solid #c2bcae;
+  box-shadow: 0 16px 0 -4px #bdb6a7, 0 34px 40px rgba(0, 0, 40, 0.28);
+}
+
+.monitor__pantalla {
+  position: relative;
+  height: 340px;
+  border-radius: 14px;
+  border: 6px solid #9c968a;
+  overflow: hidden;
+  /* Cielo arriba, césped abajo */
+  background: linear-gradient(#4f9fff 0%, #bfe2ff 56%, #79c955 56%, #3f9a2b 100%);
+}
+
+.monitor__base {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 8px 0;
+}
+
+.monitor__marca {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #5d584e;
+}
+
+.monitor__luces {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.monitor__led {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #c8ffb0, #3fbf2a);
+  box-shadow: 0 0 6px #6cff4a;
+}
+
+.monitor__altavoz {
+  width: 54px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #a9a395;
+  background: repeating-linear-gradient(90deg, #8f897d 0 2px, transparent 2px 6px);
+}
+
+.monitor__nota {
+  position: absolute;
+  left: -14px;
+  bottom: -22px;
+  width: 130px;
+  padding: 12px 10px;
+  font-size: 22px;
+  line-height: 1.05;
+  transform: rotate(-6deg);
+}
+
+/* Ventanitas decorativas dentro de la pantalla */
+.popup {
+  position: absolute;
+  border-radius: 6px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.popup__barra {
+  padding: 2px 8px;
+  color: var(--blanco);
+  font-family: var(--fuente-sistema);
+  font-size: 18px;
+}
+
+.popup__texto {
+  margin: 0;
+  padding: 10px;
+  font-family: var(--fuente-pixel);
+  font-size: 16px;
+}
+
+.popup--amarillo {
+  left: 22px;
+  top: 26px;
+  width: 200px;
+  border: 2px solid #c0392b;
+  background: #fff3a8;
+  transform: rotate(-4deg);
+}
+
+.popup--amarillo .popup__barra {
+  background: linear-gradient(#ff6b6b, #c0392b);
+}
+
+.popup--amarillo .popup__texto {
+  color: #5a1a00;
+}
+
+.popup--rosa {
+  left: 48px;
+  bottom: 26px;
+  width: 170px;
+  border: 2px solid var(--rosa-oscuro);
+  background: var(--rosa-claro);
+  transform: rotate(3deg);
+}
+
+.popup--rosa .popup__barra {
+  background: linear-gradient(var(--rosa), var(--rosa-oscuro));
+}
+
+.popup--rosa .popup__texto {
+  color: #5c0f3b;
+}
+
+/* Iconos de escritorio */
+.escritorio {
+  position: absolute;
+  right: 14px;
+  top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.escritorio__icono {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-family: var(--fuente-sistema);
+  font-size: 16px;
+  color: var(--blanco);
+  text-shadow: 1px 1px 0 var(--azul-oscuro);
+}
+
+/* Ventana central "Mensaje del sistema" */
+.mensaje-sistema {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-36%, -46%);
+  width: 300px;
+  max-width: 78%;
+  border: 2px solid var(--azul-medio);
+  border-radius: 8px;
+  background: #f3f7ff;
+  box-shadow: var(--sombra-ventana);
+}
+
+.mensaje-sistema__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 6px 4px 10px;
+  background: var(--brillo-barra);
+  color: var(--blanco);
+  font-family: var(--fuente-sistema);
+  font-size: 20px;
+}
+
+.mensaje-sistema__cerrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 18px;
+  border-radius: 3px;
+  border: 1px solid var(--blanco);
+  background: linear-gradient(#ff8a7a, var(--rojo-cerrar));
+  font-size: 16px;
+  line-height: 1;
+}
+
+.mensaje-sistema__cuerpo {
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.mensaje-sistema__pregunta {
+  margin: 0;
+  font-family: var(--fuente-pixel);
+  font-size: 22px;
+  line-height: 1.15;
+  color: var(--azul-oscuro);
+}
+
+.mensaje-sistema__botones {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ---------- Texto del hero ---------- */
+.hero__texto {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.hero__cuerpo {
+  padding: 26px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hero__prompt {
+  font-family: var(--fuente-sistema);
+  font-size: 22px;
+  color: var(--azul);
+}
+
+.hero__titulo {
+  margin: 0;
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  font-size: 39px;
+  line-height: 1.05;
+  color: var(--azul-oscuro);
+}
+
+.hero__descripcion {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2b3a55;
+}
+
+.hero__botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+/* ---------- Estantería de juegos ---------- */
+.recientes {
+  padding-top: 40px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+}
+
+.estanteria {
+  width: 100%;
+  padding: 28px 18px 0;
+  border-radius: var(--radio);
+  border: 3px solid #d2d9e0;
+  /* Panel perforado: puntitos repetidos */
+  background-color: #f4f6f8;
+  background-image: radial-gradient(#c3ccd6 2.5px, rgba(0, 0, 0, 0) 3px);
+  background-size: 22px 22px;
+  box-shadow: 0 14px 30px rgba(13, 58, 140, 0.25);
+}
+
+.estanteria__lista {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  column-gap: 0; /* sin hueco para que la balda verde sea continua */
+  row-gap: 28px;
+}
+
+.juego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10px;
+  /* La balda verde va en el fondo de cada juego */
+  background: linear-gradient(
+    rgba(0, 0, 0, 0) calc(100% - 20px),
+    var(--verde) calc(100% - 20px),
+    #6fdc6a calc(100% - 17px),
+    #2e8f33 100%
+  );
+}
+
+.juego__etiqueta {
+  position: relative;
+  top: -2px;
+  max-width: 100%;
+  margin-bottom: 26px;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--brillo-azul);
+  border: 2px solid var(--blanco);
+  box-shadow: 0 2px 4px rgba(13, 58, 140, 0.4);
+  color: var(--blanco);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ---------- Portadas ---------- */
+.portada {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.18);
+}
+
+.portada__plataforma {
+  padding: 3px 8px;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--blanco);
+  font-family: var(--fuente-sistema);
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.portada__titulo {
+  padding: 0 10px;
+  font-family: var(--fuente-pixel);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.05;
+  text-align: center;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.25);
+}
+
+.portada__formato {
+  margin: 0 8px 8px auto;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--blanco);
+  color: var(--texto);
+  font-family: var(--fuente-sistema);
+  font-size: 16px;
+}
+
+/* Un color por juego (el nombre viene de routes/index.js) */
+.portada--neon {
+  background:
+    radial-gradient(circle at 70% 35%, #ffe066 0 18%, rgba(0, 0, 0, 0) 19%),
+    repeating-linear-gradient(0deg, #ff5fa2 0 10px, #e04a8c 10px 20px);
+  color: #ffffff;
+}
+
+.portada--kitty {
+  background:
+    radial-gradient(circle at 50% 60%, #ffffff 0 22%, rgba(0, 0, 0, 0) 23%),
+    linear-gradient(#ff9a3d, #ff6a3d);
+  color: #3a1500;
+}
+
+.portada--star {
+  background:
+    radial-gradient(circle at 30% 30%, #fff7a8 0 6%, rgba(0, 0, 0, 0) 7%),
+    radial-gradient(circle at 75% 55%, #fff7a8 0 4%, rgba(0, 0, 0, 0) 5%),
+    linear-gradient(#1b1b3a, #3b2b7a);
+  color: #7cf7ff;
+}
+
+.portada--bubble {
+  background:
+    radial-gradient(circle at 30% 40%, #ffffff 0 12%, rgba(0, 0, 0, 0) 13%),
+    radial-gradient(circle at 65% 62%, #ffffff 0 9%, rgba(0, 0, 0, 0) 10%),
+    linear-gradient(#7b5cff, #a98bff);
+  color: #ffffff;
+}
+
+.portada--dungeon {
+  background: repeating-linear-gradient(45deg, #2ecc71 0 14px, #27b863 14px 28px);
+  color: #0b2e18;
+}
+
+.portada--skate {
+  background:
+    radial-gradient(ellipse 60% 25% at 50% 60%, #ffffff 0 60%, rgba(0, 0, 0, 0) 61%),
+    linear-gradient(#3aa0ff, #a6d8ff);
+  color: var(--azul-oscuro);
+}
+
+.recientes__enlace {
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: 2px solid var(--azul-medio);
+  background: var(--blanco);
+  font-family: var(--fuente-sistema);
+  font-size: 24px;
+  color: var(--azul-oscuro);
+}
+
+/* ---------- Info ---------- */
+.info {
+  padding-top: 48px;
+  padding-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info__pasos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.info__titulo {
+  margin: 0 0 8px;
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--azul-oscuro);
+}
+
+.info__texto {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.55;
+  color: #2b3a55;
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .monitor {
+    padding: 16px 16px 12px;
+  }
+
+  .popup--rosa,
+  .escritorio {
+    display: none;
+  }
+
+  .mensaje-sistema {
+    transform: translate(-50%, -40%);
+  }
+
+  .hero__titulo {
+    font-size: 30px;
+  }
+}

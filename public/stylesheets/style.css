@@ -1,8 +1,17 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+/* 1. Variables (colores, fuentes, medidas) */
+@import url("var.css");
 
-a {
-  color: #00B7FF;
-}
+/* 2. Base: fuentes propias, body, enlaces, foco */
+@import url("base.css");
+
+/* 3. Piezas reutilizables: ventanas, botones, campos, notas, avisos */
+@import url("componentes.css");
+
+/* 4. Partes comunes a todas las páginas */
+@import url("header.css");
+@import url("footer.css");
+
+/* 5. Una hoja por página */
+@import url("index.css");
+@import url("login.css");
+@import url("contacto.css");

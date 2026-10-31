@@ -1,0 +1,58 @@
+/* ==========================================================
+   base.css — estilos generales de toda la web.
+   ========================================================== */
+
+/* Fuentes propias (archivos en public/fonts/) */
+@font-face {
+  font-family: 'Cloudy';
+  src: url('/fonts/Cloudy.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rufenthall';
+  src: url('/fonts/Rufenthall.otf') format('opentype');
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--fuente-texto);
+  color: var(--texto);
+  /* Cielo con nubes: varias elipses blancas sobre un degradado azul */
+  background:
+    radial-gradient(ellipse 420px 130px at 10% 8%, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 70%),
+    radial-gradient(ellipse 520px 150px at 88% 14%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 70%),
+    radial-gradient(ellipse 460px 140px at 30% 46%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 70%),
+    radial-gradient(ellipse 500px 150px at 80% 62%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 70%),
+    linear-gradient(#2a78db, #7fbcff 70%, #b9dcff);
+}
+
+a {
+  color: var(--azul-oscuro);
+}
+
+a:hover {
+  color: var(--azul);
+}
+
+/* Foco visible al navegar con teclado (accesibilidad) */
+:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 3px;
+}
+
+/* Contenedor centrado que usan todas las secciones */
+.contenedor {
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}

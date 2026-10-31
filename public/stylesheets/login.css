@@ -1,0 +1,116 @@
+/* ==========================================================
+   login.css — página de inicio de sesión (views/login.ejs)
+   ========================================================== */
+
+.login {
+  padding-top: 56px;
+  padding-bottom: 96px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.login__ventana {
+  flex: 0 1 480px;
+  min-width: 0;
+  position: relative; /* para colocar el aviso encima */
+  box-shadow: var(--sombra-ventana-grande);
+}
+
+.login__form {
+  padding: 28px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login__cabecera {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.login__icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(#e9f3ff, var(--azul-palido));
+  border: 2px solid var(--azul-borde);
+}
+
+.login__titulo {
+  margin: 0 0 4px;
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1.05;
+  color: var(--azul-oscuro);
+}
+
+.login__subtitulo {
+  margin: 0;
+  font-size: 14px;
+  color: var(--texto-suave);
+}
+
+.login__fila {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.login__fila a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.check {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+}
+
+.check input {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  accent-color: var(--azul);
+}
+
+.login__registro {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--texto-suave);
+}
+
+/* ---------- Columna lateral ---------- */
+.login__aside {
+  flex: 0 1 300px;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-top: 20px;
+}
+
+.login__porque {
+  transform: rotate(2deg);
+}
+
+.login__nota {
+  align-self: flex-start;
+  width: 220px;
+  transform: rotate(-4deg);
+}

@@ -1,0 +1,278 @@
+/* ==========================================================
+   componentes.css — piezas que se repiten en varias páginas.
+   ========================================================== */
+
+/* ---------- Ventana tipo sistema operativo ---------- */
+.ventana {
+  background: var(--blanco);
+  border: 2px solid var(--azul-medio);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-ventana);
+  overflow: hidden;
+}
+
+.ventana__barra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 8px 6px 12px;
+  background: var(--brillo-barra);
+  color: var(--blanco);
+  font-family: var(--fuente-sistema);
+  font-size: 22px;
+}
+
+/* Botones decorativos de minimizar y cerrar */
+.ventana__botones {
+  display: flex;
+  gap: 4px;
+}
+
+.ventana__botones span {
+  width: 20px;
+  height: 18px;
+  border-radius: 3px;
+  border: 1px solid var(--blanco);
+  background: linear-gradient(#ffffff, var(--azul-palido));
+}
+
+.ventana__botones span:last-child {
+  background: linear-gradient(#ff8a7a, var(--rojo-cerrar));
+}
+
+.ventana__cuerpo {
+  margin: 0;
+  padding: 20px;
+}
+
+/* Variante rosa */
+.ventana--rosa {
+  background: var(--rosa-claro);
+  border-color: var(--rosa-oscuro);
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.ventana--rosa .ventana__barra {
+  background: linear-gradient(var(--rosa), var(--rosa-oscuro));
+  font-size: 20px;
+  padding: 4px 10px;
+}
+
+.ventana--rosa .ventana__cuerpo {
+  padding: 14px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #4a0d30;
+}
+
+/* ---------- Botones brillantes ---------- */
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px; /* tamaño mínimo táctil */
+  padding: 0 18px;
+  border-radius: 999px;
+  font-family: var(--fuente-sistema);
+  font-size: 22px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton--azul {
+  background: var(--brillo-azul);
+  border: 2px solid var(--azul-oscuro);
+  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.6), 0 3px 0 var(--azul-oscuro);
+  color: var(--blanco);
+}
+
+.boton--azul:hover {
+  color: var(--blanco);
+  filter: brightness(1.08);
+}
+
+.boton--gris {
+  background: var(--brillo-gris);
+  border: 2px solid #7a7a7a;
+  box-shadow: inset 0 2px 0 #ffffff, 0 3px 0 #7a7a7a;
+  color: #1a1a1a;
+}
+
+.boton--gris:hover {
+  color: #1a1a1a;
+  filter: brightness(0.97);
+}
+
+.boton--grande {
+  min-height: 50px;
+  padding: 0 28px;
+  font-size: 26px;
+}
+
+.boton--ancho {
+  width: 100%;
+}
+
+/* Efecto de pulsado */
+.boton:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+/* ---------- Campos de formulario ---------- */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-family: var(--fuente-sistema);
+  font-size: 22px;
+  color: var(--texto);
+}
+
+.campo input,
+.campo textarea {
+  min-height: 48px;
+  padding: 0 14px;
+  border-radius: 6px;
+  border: 2px solid var(--gris-campo);
+  background: var(--blanco);
+  box-shadow: inset 2px 2px 0 #dbe6f5;
+  font-family: var(--fuente-texto);
+  font-size: 16px;
+  color: var(--texto);
+}
+
+.campo textarea {
+  padding: 12px 14px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  border-color: var(--azul);
+}
+
+/* ---------- Títulos ---------- */
+.titulo-pildora {
+  margin: 0;
+  align-self: center;
+  padding: 8px 32px 10px;
+  border-radius: 999px;
+  background: var(--brillo-azul);
+  border: 3px solid var(--blanco);
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.55), 0 6px 14px rgba(13, 58, 140, 0.35);
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  font-size: 30px;
+  color: var(--blanco);
+}
+
+.titulo-placa {
+  margin: 0;
+  align-self: center;
+  padding: 8px 30px 10px;
+  border-radius: 16px;
+  background: var(--brillo-placa);
+  border: 3px solid var(--azul-borde);
+  font-family: var(--fuente-titulo);
+  font-weight: 400;
+  font-size: 30px;
+  color: var(--azul);
+}
+
+/* ---------- Lista con checks verdes ---------- */
+.lista-check {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lista-check li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.lista-check li::before {
+  content: "";
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--verde) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7 12.5l3.2 3.2L17 9' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 100% no-repeat;
+}
+
+/* ---------- Nota adhesiva amarilla ---------- */
+.nota {
+  margin: 0;
+  padding: 16px 16px 18px;
+  background: var(--amarillo);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.25);
+  font-family: var(--fuente-nota);
+  font-size: 24px;
+  line-height: 1.15;
+  color: var(--amarillo-texto);
+}
+
+/* ---------- Aviso del sistema (tras enviar un formulario) ---------- */
+.aviso {
+  position: absolute;
+  inset: 40px 0 0 0; /* deja visible la barra de la ventana */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(13, 58, 140, 0.25);
+}
+
+.aviso__caja {
+  width: 340px;
+  max-width: 100%;
+  border: 2px solid var(--azul-medio);
+  border-radius: 8px;
+  background: #f3f7ff;
+  box-shadow: 6px 6px 0 rgba(13, 58, 140, 0.4);
+  overflow: hidden;
+}
+
+.aviso__barra {
+  padding: 4px 10px;
+  background: var(--brillo-barra);
+  color: var(--blanco);
+  font-family: var(--fuente-sistema);
+  font-size: 20px;
+}
+
+.aviso__cuerpo {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+}
+
+.aviso__titulo {
+  margin: 0;
+  font-family: var(--fuente-titulo);
+  font-size: 22px;
+  color: var(--azul-oscuro);
+}
+
+.aviso__texto {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--texto-suave);
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= title %> · GameShelf</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="cabecera__marca">
+    <a href="/" class="logo" aria-label="GameShelf, ir a inicio">
+      <span class="logo__icono">
+        <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4 6.1 20.5l1.2-6.5L2.5 9.4l6.6-.9z" fill="#ffffff" stroke="#0d3a8c" stroke-width="1.2" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="logo__texto">GAMESHELF</span>
+    </a>
+    <span class="cabecera__smiley" aria-hidden="true">
+      <svg width="34" height="34" viewBox="0 0 24 24"><circle cx="8.5" cy="9" r="1.6" fill="#ffffff"/><circle cx="15.5" cy="9" r="1.6" fill="#ffffff"/><path d="M6.5 13.5c1.4 3 3.2 4.2 5.5 4.2s4.1-1.2 5.5-4.2" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </span>
+  </div>
+
+  <%
+    var enlaces = [
+      { href: '/', texto: 'Inicio', id: 'inicio' },
+      { href: '/login', texto: 'Login', id: 'login' },
+      { href: '/contacto', texto: 'Contacto', id: 'contacto' }
+    ];
+  %>
+  <nav class="nav" aria-label="Principal">
+    <% enlaces.forEach(function (enlace) { %>
+      <a href="<%= enlace.href %>" class="nav__enlace" <%- enlace.id === locals.pagina ? 'aria-current="page"' : '' %>><%= enlace.texto %></a>
+    <% }); %>
+  </nav>
+</header>
