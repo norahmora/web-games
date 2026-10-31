@@ -1,0 +1,67 @@
+<%- include('partials/header') %>
+
+<main class="login contenedor">
+
+  <div class="ventana login__ventana">
+    <div class="ventana__barra">
+      <span>iniciar_sesion.exe</span>
+      <span class="ventana__botones" aria-hidden="true"><span></span><span></span></span>
+    </div>
+
+    <form action="/login" method="POST" class="ventana__cuerpo login__form" aria-labelledby="login-titulo">
+      <div class="login__cabecera">
+        <span class="login__icono" aria-hidden="true">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#1f5fd1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M7 12h4M9 10v4"/><circle cx="15.5" cy="11.5" r="1"/><circle cx="17.5" cy="13.5" r="1"/></svg>
+        </span>
+        <div>
+          <h1 id="login-titulo" class="login__titulo">Accede a tu Shelf</h1>
+          <p class="login__subtitulo">Introduce tu usuario y contraseña.</p>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="usuario">Nombre de usuario</label>
+        <input id="usuario" name="username" type="text" autocomplete="username" placeholder="usuario123" required>
+      </div>
+
+      <div class="campo">
+        <label for="password">Contraseña</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="••••••••" required>
+      </div>
+
+      <div class="login__fila">
+        <label class="check"><input type="checkbox" name="remember"> Recordarme</label>
+        <a href="/contacto">¿Olvidaste tu contraseña?</a>
+      </div>
+
+      <button type="submit" class="boton boton--azul boton--grande boton--ancho">Entrar</button>
+
+      <p class="login__registro">¿Aún no tienes cuenta? <a href="/contacto">Escríbenos</a></p>
+    </form>
+
+    <% if (locals.enviado) { %>
+      <div class="aviso">
+        <div class="aviso__caja" role="alertdialog" aria-labelledby="aviso-titulo">
+          <div class="aviso__barra">Mensaje del sistema</div>
+          <div class="aviso__cuerpo">
+            <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#3cb043"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <p id="aviso-titulo" class="aviso__titulo">¡Sesión iniciada!</p>
+            <p class="aviso__texto">Inicio de sesión simulado. En la próxima entrega te llevará a tu catálogo personal.</p>
+            <a href="/login" class="boton boton--gris">Aceptar</a>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+  <aside class="login__aside">
+    <div class="ventana ventana--rosa login__porque">
+      <div class="ventana__barra">¿Por qué entrar?</div>
+      <p class="ventana__cuerpo">Tu colección es privada: al iniciar sesión solo verás tus propias copias, con su plataforma, formato y estado.</p>
+    </div>
+    <p class="nota login__nota">Usuario de prueba:<br>usuario123<br>contraseña123</p>
+  </aside>
+
+</main>
+
+<%- include('partials/footer') %>

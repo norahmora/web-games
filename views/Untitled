@@ -1,0 +1,78 @@
+<%- include('partials/header') %>
+
+<main class="contacto contenedor">
+  <h1 class="titulo-pildora">Contacto</h1>
+
+  <div class="contacto__columnas">
+
+    <div class="ventana contacto__ventana">
+      <div class="ventana__barra">
+        <span>nuevo_mensaje.txt</span>
+        <span class="ventana__botones" aria-hidden="true"><span></span><span></span></span>
+      </div>
+
+      <form action="/contacto" method="POST" class="ventana__cuerpo contacto__form" aria-labelledby="contacto-titulo">
+        <div>
+          <h2 id="contacto-titulo" class="contacto__titulo">Te ayudamos</h2>
+          <p class="contacto__subtitulo">¿Dudas, sugerencias o problemas con tu cuenta? Cuéntanos.</p>
+        </div>
+
+        <div class="contacto__fila">
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required>
+          </div>
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" placeholder="tu@correo.com" required>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="7" placeholder="Escribe aquí tu mensaje…" required></textarea>
+        </div>
+
+        <button type="submit" class="boton boton--azul boton--grande contacto__enviar">Enviar mensaje</button>
+      </form>
+
+      <% if (locals.enviado) { %>
+        <div class="aviso">
+          <div class="aviso__caja" role="alertdialog" aria-labelledby="aviso-titulo">
+            <div class="aviso__barra">Mensaje del sistema</div>
+            <div class="aviso__cuerpo">
+              <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#3cb043"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <p id="aviso-titulo" class="aviso__titulo">¡Mensaje enviado!</p>
+              <p class="aviso__texto">Envío simulado. Te responderemos lo antes posible.</p>
+              <a href="/contacto" class="boton boton--gris">Aceptar</a>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+
+    <aside class="contacto__aside">
+      <div class="ventana">
+        <div class="ventana__barra">info.txt</div>
+        <ul class="ventana__cuerpo contacto__info">
+          <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f5fd1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <div><span class="contacto__etiqueta">Correo</span><span>info@gameshelf.com</span></div>
+          </li>
+          <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f5fd1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 19c.8-3.4 3.4-5 6.5-5s5.7 1.6 6.5 5M15 14.2c2.6-.3 5.6.9 6.5 4.8"/></svg>
+            <div><span class="contacto__etiqueta">Equipo</span><span>Norah Mora y Manuel Pardave</span></div>
+          </li>
+          <li>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1f5fd1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-5h4v5"/></svg>
+            <div><span class="contacto__etiqueta">Centro</span><span>CESUR</span></div>
+          </li>
+        </ul>
+      </div>
+      <p class="nota contacto__nota">¿No puedes entrar en tu cuenta? Cuéntanoslo aquí y lo miramos.</p>
+    </aside>
+
+  </div>
+</main>
+
+<%- include('partials/footer') %>

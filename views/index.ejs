@@ -1,11 +1,135 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('partials/header') %>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero contenedor" aria-labelledby="hero-titulo">
+
+    <div class="monitor">
+      <div class="monitor__pantalla">
+        <div class="popup popup--amarillo" aria-hidden="true">
+          <div class="popup__barra">¡NUEVO!</div>
+          <p class="popup__texto">Filtra por plataforma en un clic</p>
+        </div>
+
+        <div class="popup popup--rosa" aria-hidden="true">
+          <div class="popup__barra">mi_coleccion</div>
+          <p class="popup__texto">128 copias guardadas</p>
+        </div>
+
+        <div class="escritorio" aria-hidden="true">
+          <div class="escritorio__icono">
+            <svg width="34" height="28" viewBox="0 0 34 28"><path d="M2 5h11l3 3h16v18H2z" fill="#ffcc33" stroke="#a87400" stroke-width="1.5"/></svg>
+            Mis juegos
+          </div>
+          <div class="escritorio__icono">
+            <svg width="30" height="30" viewBox="0 0 30 30"><circle cx="15" cy="15" r="13" fill="#e6f0ff" stroke="#6a87b8" stroke-width="1.5"/><circle cx="15" cy="15" r="4" fill="#9fb7dd"/><path d="M6 10a11 11 0 0 1 8-6" fill="none" stroke="#ff8cc6" stroke-width="2"/></svg>
+            Wishlist
+          </div>
+        </div>
+
+        <div class="mensaje-sistema">
+          <div class="mensaje-sistema__barra">
+            <span>Mensaje del sistema</span>
+            <span class="mensaje-sistema__cerrar" aria-hidden="true">×</span>
+          </div>
+          <div class="mensaje-sistema__cuerpo">
+            <p class="mensaje-sistema__pregunta">¿Abrir tu colección de videojuegos?</p>
+            <div class="mensaje-sistema__botones">
+              <a href="/login" class="boton boton--azul">SÍ, ENTRAR</a>
+              <a href="#info" class="boton boton--gris">SABER MÁS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="monitor__base">
+        <span class="monitor__marca">GAMESHELF TERMINAL 2000</span>
+        <span class="monitor__luces" aria-hidden="true">
+          <span class="monitor__led"></span>
+          <span class="monitor__altavoz"></span>
+        </span>
+      </div>
+
+      <p class="nota monitor__nota" aria-hidden="true">¡Ni un cartucho perdido!</p>
+    </div>
+
+    <div class="ventana hero__texto">
+      <div class="ventana__barra">
+        <span>bienvenida.txt</span>
+        <span class="ventana__botones" aria-hidden="true"><span></span><span></span></span>
+      </div>
+      <div class="ventana__cuerpo hero__cuerpo">
+        <span class="hero__prompt">&gt; tu_coleccion.exe</span>
+        <h1 id="hero-titulo" class="hero__titulo">Tu shelf de videojuegos, siempre ordenada</h1>
+        <p class="hero__descripcion">GameShelf es una aplicación web para gestionar tu colección: registra tus copias físicas y digitales, consulta en qué estado está cada una y encuentra cualquier juego en segundos.</p>
+        <ul class="lista-check">
+          <li>Colección privada: solo tú ves tus copias</li>
+          <li>Busca y filtra por plataforma, género o formato</li>
+          <li>Ficha de cada copia: edición, estado y horas jugadas</li>
+        </ul>
+        <div class="hero__botones">
+          <a href="/login" class="boton boton--azul boton--grande">Iniciar sesión</a>
+          <a href="/contacto" class="boton boton--gris boton--grande">Contactar</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ESTANTERÍA -->
+  <section class="recientes contenedor" aria-labelledby="recientes-titulo">
+    <h2 id="recientes-titulo" class="titulo-pildora">Agregados recientemente</h2>
+
+    <div class="estanteria">
+      <ul class="estanteria__lista">
+        <% juegos.forEach(function (juego) { %>
+          <li class="juego">
+            <div class="portada portada--<%= juego.portada %>">
+              <span class="portada__plataforma"><%= juego.plataforma %></span>
+              <span class="portada__titulo"><%= juego.titulo %></span>
+              <span class="portada__formato"><%= juego.formato %></span>
+            </div>
+            <span class="juego__etiqueta"><%= juego.titulo %> · <%= juego.anio %></span>
+          </li>
+        <% }); %>
+      </ul>
+    </div>
+
+    <a href="/login" class="recientes__enlace">Inicia sesión para ver tu colección completa →</a>
+  </section>
+
+  <!-- INFO  -->
+  <section id="info" class="info contenedor" aria-labelledby="info-titulo">
+    <h2 id="info-titulo" class="titulo-placa">Info</h2>
+
+    <div class="info__pasos">
+      <article class="ventana">
+        <div class="ventana__barra">paso_01.exe</div>
+        <div class="ventana__cuerpo">
+          <h3 class="info__titulo">Inicia sesion</h3>
+          <p class="info__texto">Entra con tu usuario y contraseña para acceder a tu colección privada.</p>
+        </div>
+      </article>
+
+      <article class="ventana">
+        <div class="ventana__barra">paso_02.exe</div>
+        <div class="ventana__cuerpo">
+          <h3 class="info__titulo">Explora tu catalogo</h3>
+          <p class="info__texto">Ordena, filtra y busca entre tus copias por plataforma, género o formato.</p>
+        </div>
+      </article>
+
+      <article class="ventana">
+        <div class="ventana__barra">paso_03.exe</div>
+        <div class="ventana__cuerpo">
+          <h3 class="info__titulo">Abre cada ficha</h3>
+          <p class="info__texto">Consulta la información del juego y el estado de tu copia: edición, conservación y horas jugadas.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<%- include('partials/footer') %>

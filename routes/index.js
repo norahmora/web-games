@@ -7,12 +7,12 @@ router.get('/', function(req, res, next) {
 });
 
 /* GET login. */
-router.get('/login', function(req, res, next) {
+router.get('/login', function(req, res) {
   res.render('login', { title: 'Login' });
 });
 
 /* GET contacto. */
-router.get('/contacto', function(req, res, next) {
+router.get('/contacto', function(req, res) {
   res.render('contacto', { title: 'Contacto' });
 });
 
