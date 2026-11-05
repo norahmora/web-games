@@ -1,0 +1,16 @@
+{
+  "games": [
+    {
+      "id": 1,
+      "title": "Neon Drift",
+      "description": "Aprende a programar con Python",
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "title": "Kitty Quest",
+      "description": "Aprende a programar con Python",
+      "image": "https://via.placeholder.com/150"
+    }
+  ]
+}
