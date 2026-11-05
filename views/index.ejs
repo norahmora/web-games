@@ -85,10 +85,10 @@
       <ul class="estanteria__lista">
         <% juegos.forEach(function (juego) { %>
           <li class="juego">
-            <div class="portada portada--<%= juego.portada %>">
-              <span class="portada__plataforma"><%= juego.plataforma %></span>
-              <span class="portada__titulo"><%= juego.titulo %></span>
-              <span class="portada__formato"><%= juego.formato %></span>
+            <div class="portada portada--<%= juego.image %>">
+              <span class="portada__plataforma"><%= juegos.plataforma %></span>
+              <span class="portada__titulo"><%= juegos.title %></span>
+              <span class="portada__formato"><%= juegos.formato %></span>
             </div>
             <span class="juego__etiqueta"><%= juego.titulo %> · <%= juego.anio %></span>
           </li>
