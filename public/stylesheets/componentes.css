@@ -276,3 +276,88 @@
   line-height: 1.5;
   color: var(--texto-suave);
 }
+
+
+/*animaciones*/
+/* 1. Animación de pulsación constante (latido / atención) */
+@keyframes pulso-videojuego {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(30, 100, 220, 0.4);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 0 12px 5px rgba(30, 100, 220, 0.7);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(30, 100, 220, 0.4);
+  }
+}
+
+/* Aplicamos la animación por defecto a los botones objetivo */
+.boton-pulsar {
+  animation: pulso-videojuego 1.4s infinite ease-in-out;
+}
+
+/* Al pasar el cursor: se detiene el pulso y se resalta */
+.boton-pulsar:hover {
+  animation: none !important;
+  transform: scale(1.1);
+  filter: brightness(1.2);
+  cursor: pointer;
+}
+
+/* 2. Animación de "destrucción de bloque" al hacer clic (estilo pixel/romperse) */
+@keyframes retro-destruir {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    filter: contrast(150%);
+  }
+  33% {
+    transform: scale(1.15);
+    background-color: #ffcc00; /* Destello estilo power-up o daño */
+    color: #000;
+  }
+  66% {
+    transform: scale(0.6);
+    opacity: 0.5;
+    filter: contrast(300%) grayscale(80%);
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+.destruyendo {
+  /* steps(3) hace que la animación sea entrecortada, 100% estilo arcade retro */
+  animation: retro-destruir 0.35s steps(3, end) forwards !important;
+  pointer-events: none;
+}
+
+/* 1. Estilo base de cada elemento de juego dentro de la estantería */
+.juego {
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), z-index 0.25s;
+  position: relative;
+  will-change: transform;
+}
+
+/* 2. Efecto Hover: se agranda considerablemente y se eleva estilo "cartucho/caja retro" */
+.juego:hover {
+  transform: scale(1.18) translateY(-10px);
+  z-index: 10; /* Asegura que la tarjeta sobresalga por encima de las demás */
+}
+
+/* 3. Estilo retro para la portada al hacer hover (sombra dura y contraste arcade) */
+.juego:hover .portada {
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.85); /* Sombra estilo píxel / cuadro antiguo */
+  filter: brightness(1.1);
+}
+
+/* 4. Opcional: Pequeño efecto en la etiqueta inferior al hacer hover */
+.juego:hover .juego__etiqueta {
+  background-color: #1e3a8a; /* Un azul más intenso estilo selección */
+  color: #fff;
+}

@@ -36,7 +36,7 @@
           <div class="mensaje-sistema__cuerpo">
             <p class="mensaje-sistema__pregunta">¿Abrir tu colección de videojuegos?</p>
             <div class="mensaje-sistema__botones">
-              <a href="/login" class="boton boton--azul">SÍ, ENTRAR</a>
+              <a href="/login" class="boton boton--azul boton-pulsar" id="btn-entrar">SÍ, ENTRAR</a>
               <a href="#info" class="boton boton--gris">SABER MÁS</a>
             </div>
           </div>
@@ -69,7 +69,7 @@
           <li>Ficha de cada copia: edición, estado y horas jugadas</li>
         </ul>
         <div class="hero__botones">
-          <a href="/login" class="boton boton--azul boton--grande">Iniciar sesión</a>
+          <a href="/login" class="boton boton--azul boton--grande boton-pulsar" id="btn-login">Iniciar sesión</a>
           <a href="/contacto" class="boton boton--gris boton--grande">Contactar</a>
         </div>
       </div>
@@ -133,3 +133,38 @@
 </main>
 
 <%- include('partials/footer') %>
+
+<!-- 2. Tu script de animación al final -->
+<script>
+    document.addEventListener("click", function(e) {
+      const boton = e.target.closest(".boton-pulsar");
+      
+      if (boton) {
+        e.preventDefault();
+        const destino = boton.getAttribute("href");
+
+        boton.classList.remove("boton-pulsar");
+        boton.classList.add("destruyendo");
+
+        setTimeout(() => {
+          window.location.href = destino;
+        }, 500);
+      }
+    });
+
+    // Restaura el botón si el usuario regresa con la flecha "Atrás" del navegador
+    window.addEventListener("pageshow", function(event) {
+      if (event.persisted || performance.getEntriesByType("navigation")[0]?.type === "back_forward") {
+        document.querySelectorAll(".destruyendo").forEach(boton => {
+          boton.classList.remove("destruyendo");
+          if (!boton.classList.contains("boton-pulsar")) {
+            boton.classList.add("boton-pulsar");
+          }
+        });
+      }
+    });
+</script>
+
+<!-- 3. Cierres definitivos del documento HTML -->
+</body>
+</html>
