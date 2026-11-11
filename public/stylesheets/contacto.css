@@ -96,8 +96,8 @@
 }
 
 .contacto__etiqueta {
-  font-family: var(--fuente-sistema);
-  font-size: 20px;
+  font-family: var(--fuente-pixel);
+  font-size: 16px;
   color: var(--texto-suave);
 }
 

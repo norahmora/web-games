@@ -91,8 +91,8 @@
 .popup__barra {
   padding: 2px 8px;
   color: var(--blanco);
-  font-family: var(--fuente-sistema);
-  font-size: 18px;
+  font-family: var(--fuente-pixel);
+  font-size: 15px;
 }
 
 .popup__texto {
@@ -152,8 +152,8 @@
   flex-direction: column;
   align-items: center;
   gap: 2px;
-  font-family: var(--fuente-sistema);
-  font-size: 16px;
+  font-family: var(--fuente-pixel);
+  font-size: 14px;
   color: var(--blanco);
   text-shadow: 1px 1px 0 var(--azul-oscuro);
 }
@@ -179,8 +179,8 @@
   padding: 4px 6px 4px 10px;
   background: var(--brillo-barra);
   color: var(--blanco);
-  font-family: var(--fuente-sistema);
-  font-size: 20px;
+  font-family: var(--fuente-pixel);
+  font-size: 16px;
 }
 
 .mensaje-sistema__cerrar {
@@ -234,8 +234,8 @@
 }
 
 .hero__prompt {
-  font-family: var(--fuente-sistema);
-  font-size: 22px;
+  font-family: var(--fuente-pixel);
+  font-size: 17px;
   color: var(--azul);
 }
 
@@ -342,8 +342,8 @@
   padding: 3px 8px;
   background: rgba(0, 0, 0, 0.55);
   color: var(--blanco);
-  font-family: var(--fuente-sistema);
-  font-size: 16px;
+  font-family: var(--fuente-pixel);
+  font-size: 14px;
   letter-spacing: 1px;
 }
 
@@ -363,8 +363,8 @@
   border-radius: 999px;
   background: var(--blanco);
   color: var(--texto);
-  font-family: var(--fuente-sistema);
-  font-size: 16px;
+  font-family: var(--fuente-pixel);
+  font-size: 14px;
 }
 
 /* Un color por juego (el nombre viene de routes/index.js) */
@@ -415,8 +415,8 @@
   border-radius: 8px;
   border: 2px solid var(--azul-medio);
   background: var(--blanco);
-  font-family: var(--fuente-sistema);
-  font-size: 24px;
+  font-family: var(--fuente-pixel);
+  font-size: 18px;
   color: var(--azul-oscuro);
 }
 

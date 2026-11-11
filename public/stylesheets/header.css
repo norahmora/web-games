@@ -52,6 +52,31 @@
   letter-spacing: 2px;
   color: var(--azul);
   text-shadow: 3px 3px 0 #ffffff, 5px 5px 0 var(--azul-borde);
+  /* Para que la placa vuelva a su sitio suavemente al quitar el cursor */
+  transition: transform 0.6s ease-out;
+}
+
+/* Flotar como una nube: sube, baja y se mece un poco, sin parar mientras
+   el cursor (o el foco del teclado) esté sobre el logo */
+@keyframes flotar-nube {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(-5px) rotate(-1deg); }
+  50%  { transform: translateY(-8px) rotate(0deg); }
+  75%  { transform: translateY(-4px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.logo:hover .logo__texto,
+.logo:focus-visible .logo__texto {
+  animation: flotar-nube 3s ease-in-out infinite;
+}
+
+/* Quien tenga activado "reducir movimiento" en su sistema no ve la animación */
+@media (prefers-reduced-motion: reduce) {
+  .logo:hover .logo__texto,
+  .logo:focus-visible .logo__texto {
+    animation: none;
+  }
 }
 
 .cabecera__smiley {
@@ -86,8 +111,8 @@
   padding: 0 26px;
   border-radius: 8px;
   border: 2px solid transparent;
-  font-family: var(--fuente-sistema);
-  font-size: 26px;
+  font-family: var(--fuente-pixel);
+  font-size: 20px;
   color: #1a1a1a;
   text-decoration: none;
 }
@@ -123,6 +148,6 @@
 
   .nav__enlace {
     padding: 0 14px;
-    font-size: 22px;
+    font-size: 17px;
   }
 }

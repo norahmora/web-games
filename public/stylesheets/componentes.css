@@ -19,8 +19,8 @@
   padding: 6px 8px 6px 12px;
   background: var(--brillo-barra);
   color: var(--blanco);
-  font-family: var(--fuente-sistema);
-  font-size: 22px;
+  font-family: var(--fuente-pixel);
+  font-size: 17px;
 }
 
 /* Botones decorativos de minimizar y cerrar */
@@ -75,8 +75,8 @@
   min-height: 44px; /* tamaño mínimo táctil */
   padding: 0 18px;
   border-radius: 999px;
-  font-family: var(--fuente-sistema);
-  font-size: 22px;
+  font-family: var(--fuente-pixel);
+  font-size: 17px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -129,8 +129,8 @@
 }
 
 .campo label {
-  font-family: var(--fuente-sistema);
-  font-size: 22px;
+  font-family: var(--fuente-pixel);
+  font-size: 17px;
   color: var(--texto);
 }
 
@@ -142,7 +142,7 @@
   border: 2px solid var(--gris-campo);
   background: var(--blanco);
   box-shadow: inset 2px 2px 0 #dbe6f5;
-  font-family: var(--fuente-texto);
+  font-family: var(--fuente-pixel);
   font-size: 16px;
   color: var(--texto);
 }
@@ -250,8 +250,8 @@
   padding: 4px 10px;
   background: var(--brillo-barra);
   color: var(--blanco);
-  font-family: var(--fuente-sistema);
-  font-size: 20px;
+  font-family: var(--fuente-pixel);
+  font-size: 16px;
 }
 
 .aviso__cuerpo {
@@ -283,21 +283,21 @@
 @keyframes pulso-videojuego {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(30, 100, 220, 0.4);
+    box-shadow: 0 0 0 0 rgba(30, 100, 220, 0.25);
   }
   50% {
-    transform: scale(1.06);
-    box-shadow: 0 0 12px 5px rgba(30, 100, 220, 0.7);
+    transform: scale(1.025);
+    box-shadow: 0 0 14px 3px rgba(30, 100, 220, 0.4);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(30, 100, 220, 0.4);
+    box-shadow: 0 0 0 0 rgba(30, 100, 220, 0.25);
   }
 }
 
 /* Aplicamos la animación por defecto a los botones objetivo */
 .boton-pulsar {
-  animation: pulso-videojuego 1.4s infinite ease-in-out;
+  animation: pulso-videojuego 2.6s infinite ease-in-out;
 }
 
 /* Al pasar el cursor: se detiene el pulso y se resalta */

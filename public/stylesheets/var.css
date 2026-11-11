@@ -31,12 +31,11 @@
   --gris-campo: #6f84a8;
   --foco: #ffd400;
 
-  /* Fuentes */
+  /* Fuentes: Cloudy para logo y títulos, Rufenthall para las notas adhesivas
+     y Pixelify Sans para todo lo demás */
   --fuente-titulo: 'Cloudy', 'Pixelify Sans', monospace;
-  --fuente-pixel: 'Pixelify Sans', monospace;
-  --fuente-sistema: 'VT323', monospace;
-  --fuente-texto: Verdana, Tahoma, sans-serif;
   --fuente-nota: 'Rufenthall', cursive;
+  --fuente-pixel: 'Pixelify Sans', monospace;
 
   /* Brillos (degradados de los botones y barras) */
   --brillo-azul: linear-gradient(var(--azul-claro), var(--azul) 55%, var(--azul-medio));
